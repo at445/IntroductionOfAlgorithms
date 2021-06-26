@@ -1,6 +1,7 @@
 #include <Windows.h>
 #include <iostream>
 #include <random>
+#include <algorithm>
 #include "Common.h"
 PerformanceCounter::PerformanceCounter()
 {
@@ -20,32 +21,41 @@ void PerformanceCounter::end()
 }
 
 using std::default_random_engine;
-std::shared_ptr<int[]> dataGnerator(int len)
+std::shared_ptr<std::vector<int>> dataGnerator(int len)
 {
-    std::shared_ptr<int[]> p(new int[len]());
-    for (int i = 0; i < len; i++) {
-        p[i] = len - i - 1;
+    auto p = std::make_shared<std::vector<int>>();
+    int i = 0;
+    p->push_back(12);
+    for (; i < len-2; i++) {
+        p->push_back(i);
     }
+    p->push_back(i);
+    std::random_shuffle(p->begin(), p->end());
     return p;
 }
-std::shared_ptr<int[]> dataGneratorRandom(int len)
-{
-    std::shared_ptr<int[]> p(new int[len]());
-    default_random_engine e;
-    for (int i = 0; i < len; i++) {
-        p[i] = e() % len;
-    }
-    return p;
-}
-void verification(int * p, int maxSize)
+void verification(const std::vector<int>& p)
 {
     static int i = 1;
     default_random_engine e;
 
     e.seed(i++);
     int temp = 0;
-    for (size_t i = 0; i < 10; ++i) {
-        temp = e() % maxSize;
+    for (size_t i = 0; i < 5; ++i) {
+        temp = e() % p.size();
+        std::cout << "array[" << temp << "] = " << p[temp] << std::endl;
+    }
+
+}
+
+void verification(const int* p, int max)
+{
+    static int i = 1;
+    default_random_engine e;
+
+    e.seed(i++);
+    int temp = 0;
+    for (size_t i = 0; i < 5; ++i) {
+        temp = e() % max;
         std::cout << "array[" << temp << "] = " << p[temp] << std::endl;
     }
 

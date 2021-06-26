@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Sort.cpp">
+    <ClCompile Include="Main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Common.cpp">
@@ -23,10 +23,19 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="insertsort.hpp">
+    <ClInclude Include="Common.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Common.h">
+    <ClInclude Include="InsertSort.hpp">
+      <Filter>资源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MergeSort.hpp">
+      <Filter>资源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="QuickSort.hpp">
+      <Filter>资源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Main.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

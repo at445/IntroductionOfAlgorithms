@@ -1,8 +1,8 @@
-﻿  Common.cpp
-  Sort.cpp
+﻿  Main.cpp
+C:\Users\jings\Desktop\IntroductionOfAlgorithms\Sort\Sort\Main.cpp(37,43): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
   正在生成代码
-  9 of 58 functions (15.5%) were compiled, the rest were copied from previous compilation.
-    2 functions were new in current compilation
-    1 functions had inline decision re-evaluated but remain unchanged
+  79 of 225 functions (35.1%) were compiled, the rest were copied from previous compilation.
+    15 functions were new in current compilation
+    23 functions had inline decision re-evaluated but remain unchanged
   已完成代码的生成
   Sort.vcxproj -> C:\Users\jings\Desktop\IntroductionOfAlgorithms\x64\Release\Sort.exe

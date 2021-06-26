@@ -1,5 +1,6 @@
 #pragma once
 #include <Windows.h>
+#include <vector>
 class PerformanceCounter
 {
 private:
@@ -13,6 +14,6 @@ public:
     void start();
     void end();
 };
-std::shared_ptr<int[]> dataGnerator(int len);
-std::shared_ptr<int[]> dataGneratorRandom(int len);
-void verification(int* p, int maxSize);
+std::shared_ptr<std::vector<int>> dataGnerator(int len);
+void verification(const std::vector<int>& p);
+void verification(const int* p, int max);

@@ -1,2 +1,3 @@
-﻿  Sort.cpp
+﻿  Main.cpp
+C:\Users\jings\Desktop\IntroductionOfAlgorithms\Sort\Sort\Main.cpp(33,43): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
   Sort.vcxproj -> C:\Users\jings\Desktop\IntroductionOfAlgorithms\x64\Debug\Sort.exe
