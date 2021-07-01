@@ -15,5 +15,7 @@ public:
     void end();
 };
 std::shared_ptr<std::vector<int>> dataGnerator(int len);
+std::shared_ptr<std::vector<int>> dataGneratorRandom(int len);
 void verification(const std::vector<int>& p);
 void verification(const int* p, int max);
+bool binarySearch(const std::vector<int>& nums, int target, int& pos);
