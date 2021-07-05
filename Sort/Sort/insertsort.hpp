@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 namespace InsertSort {
+	const int PARTICAL = 128;
 	template <typename T_>
 	void insert_sort(std::vector<T_>& p)
 	{

@@ -2,27 +2,30 @@
 //
 
 #include <iostream>
+#include <stdlib.h>
 #include "common.h"
 #include "Main.h"
 #include "InsertSort.hpp"
 #include "MergeSort.hpp"
 #include "QuickSort.hpp"
-const int MAX = 10000000;
+const int MAX = 5000000;
 
 int main()
 {
     std::shared_ptr<std::vector<int>> p = dataGnerator(MAX);
 
-    //std::vector<int> copy(*p);
+    std::vector<int> copy(*p);
     //InsertSortNormalWrapper(copy);
 
     //copy.clear();
     //copy = *p;
     //InsertSortRecursionWrapper(copy);
 
-    //copy.clear();
-    //copy = *p;
-    //QuickSortWrapper(copy);
+    
+
+  /*  copy.clear();
+    copy = *p;
+    QuickInsertSortWrapper(copy);*/
 
     //copy.clear();
     //copy = *p;
@@ -30,11 +33,15 @@ int main()
 
     std::shared_ptr<int[]> arr(new int[p->size()]);
 
-    std::copy(p->begin(), p->end(), arr.get());
-    MergeSortWrapperNormalWithBuffAndInsertVersion(arr);
+    //std::copy(p->begin(), p->end(), arr.get());
+    //MergeSortWrapperNormalWithBuffAndInsertVersion(arr);
 
     std::copy(p->begin(), p->end(), arr.get());
-    MergeSortWrapperNormalWithBuffVersion(arr);
+    MergeSortWrapperNormalWithoutBuffVersion(arr);
+
+    copy.clear();
+    copy = *p;
+    QuickSortWrapper(copy);
     return 0;
 }
 
@@ -110,7 +117,19 @@ void QuickSortWrapper(std::vector<int>& p)
     PerformanceCounter counter;
 
     counter.start();
+    //std::random_shuffle(p.begin(), p.end());
     QuickSort::quick_sort(p, 0, p.size() - 1);
+    counter.end();
+    verification(p);
+}
+
+void QuickInsertSortWrapper(std::vector<int>& p)
+{
+    std::cout << "===========================  Quick sort normal version:" << std::endl;
+    PerformanceCounter counter;
+
+    counter.start();
+    QuickSort::quick_sort_and_insert(p, 0, p.size() - 1);
     counter.end();
     verification(p);
 }

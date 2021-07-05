@@ -4,7 +4,6 @@
 #include <algorithm>
 #include "InsertSort.hpp"
 namespace MergeSort {
-	const int PARTICAL = 64;
 	template<typename Ty_>
 	void merge_sort(std::vector<Ty_>& pArray, std::vector<Ty_>& Buff, int start, int end)
 	{
@@ -108,7 +107,7 @@ namespace MergeSort {
 	template<typename Ty_>
 	void merge_sort_insert(Ty_* pArray, Ty_* Buff, int start, int end)
 	{
-		if ((end - start) < PARTICAL) {
+		if ((end - start) < InsertSort::PARTICAL) {
 			InsertSort::insert_sort(pArray, start, end);
 			return;
 		}
