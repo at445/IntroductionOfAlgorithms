@@ -16,7 +16,7 @@ namespace MergeSort {
 		int rIdx = middle + 1;
 		int size = end - start + 1;
 		std::copy(pArray.begin() + start, 
-			pArray.begin() + static_cast<INT64>(start) + size, 
+			pArray.begin() + start + size, 
 			Buff.begin() + start);
 
 		int i = start;

@@ -11,10 +11,10 @@ namespace InsertSort {
 			Idx = i;
 			key = p[Idx--];
 			while (key < p[Idx]) {
-				p[static_cast<INT64>(Idx) + 1] = p[Idx];
+				p[Idx + 1] = p[Idx];
 				if (--Idx < 0) break;
 			}
-			p[static_cast<INT64>(Idx) + 1] = key;
+			p[Idx + 1] = key;
 		}
 	}
 	template <typename T_>

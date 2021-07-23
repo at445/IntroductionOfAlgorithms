@@ -142,13 +142,16 @@
   <ItemGroup>
     <ClCompile Include="Common.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Sort.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common.h" />
+    <ClInclude Include="HeapSort.hpp" />
     <ClInclude Include="InsertSort.hpp" />
     <ClInclude Include="Main.h" />
     <ClInclude Include="MergeSort.hpp" />
     <ClInclude Include="QuickSort.hpp" />
+    <ClInclude Include="Sort.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

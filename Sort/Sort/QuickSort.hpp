@@ -5,7 +5,7 @@ namespace QuickSort {
 	void quick_sort(std::vector<Ty_>& array, int start, int end)
 	{
 		//#######implement one
-		if (start >= end) return;
+		/*if (start >= end) return;
 		int lIdx = start;
 		int rIdx = end;
 		int pivot = rand() % (end - start + 1) + start;
@@ -24,10 +24,10 @@ namespace QuickSort {
 		}
 		array[lIdx] = Tmp;
 		quick_sort(array, start, lIdx - 1);
-		quick_sort(array, lIdx + 1, end);
+		quick_sort(array, lIdx + 1, end);*/
 
 		//#######implement two
-		/*if (start >= end) return;
+		if (start >= end) return;
 		int p = start;
 		int q = p + 1;
 		int pivot = rand() % (end - start + 1) + start;
@@ -45,7 +45,7 @@ namespace QuickSort {
 		}
 		array[p] = temp;
 		quick_sort(array, start, p - 1);
-		quick_sort(array, p + 1, end);*/
+		quick_sort(array, p + 1, end);
 
 		//#######implement three
 		/*if (start >= end) return;
@@ -76,6 +76,8 @@ namespace QuickSort {
 
 		int lIdx = start;
 		int rIdx = end;
+		int pivot = rand() % (end - start + 1) + start;
+		std::swap(array[lIdx], array[pivot]);
 		Ty_ Tmp = array[lIdx];
 		while (lIdx != rIdx) {
 			while ((array[rIdx] >= Tmp) && (rIdx > lIdx)) {

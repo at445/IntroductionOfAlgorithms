@@ -21,6 +21,9 @@
     <ClCompile Include="Common.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Sort.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common.h">
@@ -37,6 +40,12 @@
     </ClInclude>
     <ClInclude Include="Main.h">
       <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Sort.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="HeapSort.hpp">
+      <Filter>资源文件</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
