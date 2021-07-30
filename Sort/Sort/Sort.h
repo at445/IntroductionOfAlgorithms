@@ -4,6 +4,7 @@
 #include <memory>
 namespace Sort {
 	void SortTest(void);
+	void NthLocation(std::vector<int>& p);
 	void InsertSortNormalWrapper(std::vector<int>& p);
 	void HeapSortNormalWrapper(std::vector<int>& p);
 	void InsertSortRecursionWrapper(std::vector<int>& p);

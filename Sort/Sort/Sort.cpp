@@ -6,7 +6,7 @@
 #include "Common.h"
 #include <iostream>
 namespace Sort {
-    const int MAX = 1000000;
+    const int MAX = 100000000;
 
     void SortTest(void)
     {
@@ -37,9 +37,13 @@ namespace Sort {
         ////std::copy(p->begin(), p->end(), arr.get());
         ////MergeSortWrapperNormalWithoutBuffVersion(arr);
 
-        //copy.clear();
-        //copy = *p;
-        //QuickSortWrapper(copy);
+        copy.clear();
+        copy = *p;
+        QuickSortWrapper(copy);
+
+        copy.clear();
+        copy = *p;
+        NthLocation(copy);
 
         copy.clear();
         copy = *p;
@@ -142,5 +146,15 @@ namespace Sort {
         QuickSort::quick_sort_and_insert(p, 0, p.size() - 1);
         counter.end();
         verification(p);
+    }
+
+    void NthLocation(std::vector<int>& p)
+    {
+        std::cout << "===========================  nTh location version:" << std::endl;
+        PerformanceCounter counter;
+
+        counter.start();
+        std::cout << QuickSort::nth_location(p, 5876, 0, p.size() - 1);
+        counter.end();
     }
 }
