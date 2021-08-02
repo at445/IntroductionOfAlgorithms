@@ -6,7 +6,7 @@
 #include "Common.h"
 #include <iostream>
 namespace Sort {
-    const int MAX = 100000000;
+    const int MAX = 10000000;
 
     void SortTest(void)
     {

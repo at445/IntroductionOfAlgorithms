@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DivideAndConquer", "DivideA
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sort", "Sort\Sort\Sort.vcxproj", "{5CE35C73-B8A1-4B55-96A3-2F21E592BA72}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tree", "tree\tree.vcxproj", "{B8F9CB0A-0B7B-4E82-AA7E-F2D443E33598}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{5CE35C73-B8A1-4B55-96A3-2F21E592BA72}.Release|x64.Build.0 = Release|x64
 		{5CE35C73-B8A1-4B55-96A3-2F21E592BA72}.Release|x86.ActiveCfg = Release|Win32
 		{5CE35C73-B8A1-4B55-96A3-2F21E592BA72}.Release|x86.Build.0 = Release|Win32
+		{B8F9CB0A-0B7B-4E82-AA7E-F2D443E33598}.Debug|x64.ActiveCfg = Debug|x64
+		{B8F9CB0A-0B7B-4E82-AA7E-F2D443E33598}.Debug|x64.Build.0 = Debug|x64
+		{B8F9CB0A-0B7B-4E82-AA7E-F2D443E33598}.Debug|x86.ActiveCfg = Debug|Win32
+		{B8F9CB0A-0B7B-4E82-AA7E-F2D443E33598}.Debug|x86.Build.0 = Debug|Win32
+		{B8F9CB0A-0B7B-4E82-AA7E-F2D443E33598}.Release|x64.ActiveCfg = Release|x64
+		{B8F9CB0A-0B7B-4E82-AA7E-F2D443E33598}.Release|x64.Build.0 = Release|x64
+		{B8F9CB0A-0B7B-4E82-AA7E-F2D443E33598}.Release|x86.ActiveCfg = Release|Win32
+		{B8F9CB0A-0B7B-4E82-AA7E-F2D443E33598}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

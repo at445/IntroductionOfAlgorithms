@@ -1,7 +1,12 @@
-﻿  Sort.cpp
-C:\Users\jings\Desktop\IntroductionOfAlgorithms\Sort\Sort\Sort.cpp(135,49): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
-C:\Users\jings\Desktop\IntroductionOfAlgorithms\Sort\Sort\Sort.cpp(146,60): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
-C:\Users\jings\Desktop\IntroductionOfAlgorithms\Sort\Sort\Sort.cpp(157,70): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
-C:\Users\jings\Desktop\IntroductionOfAlgorithms\Sort\Sort\HeapSort.hpp(106,1): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
-C:\Users\jings\Desktop\IntroductionOfAlgorithms\Sort\Sort\Sort.cpp(58): message : 查看对正在编译的函数 模板 实例化“void HeapSort::HeapSort<int>(std::vector<int,std::allocator<int>> &)”的引用
-  Sort.vcxproj -> C:\Users\jings\Desktop\IntroductionOfAlgorithms\x64\Debug\Sort.exe
+﻿  Common.cpp
+C:\Users\Z003TJYH\Desktop\code\IntroductionOfAlgorithms\Sort\Sort\Common.cpp(58,34): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Z003TJYH\Desktop\code\IntroductionOfAlgorithms\Sort\Sort\Common.cpp(88,30): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Main.cpp
+  Sort.cpp
+C:\Users\Z003TJYH\Desktop\code\IntroductionOfAlgorithms\Sort\Sort\Sort.cpp(135,49): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Z003TJYH\Desktop\code\IntroductionOfAlgorithms\Sort\Sort\Sort.cpp(146,60): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Z003TJYH\Desktop\code\IntroductionOfAlgorithms\Sort\Sort\Sort.cpp(157,70): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Z003TJYH\Desktop\code\IntroductionOfAlgorithms\Sort\Sort\HeapSort.hpp(106,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Z003TJYH\Desktop\code\IntroductionOfAlgorithms\Sort\Sort\Sort.cpp(58): message : see reference to function template instantiation 'void HeapSort::HeapSort<int>(std::vector<int,std::allocator<int>> &)' being compiled
+  Generating Code...
+  Sort.vcxproj -> C:\Users\Z003TJYH\Desktop\code\IntroductionOfAlgorithms\x64\Debug\Sort.exe
