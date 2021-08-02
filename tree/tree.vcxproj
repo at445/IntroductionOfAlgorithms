@@ -146,7 +146,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BinarySearchTree.h" />
+    <ClInclude Include="BinaryTree.hpp" />
+    <ClInclude Include="BinaryTreeNote.h" />
     <ClInclude Include="Common.h" />
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

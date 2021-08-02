@@ -2,13 +2,15 @@
 //
 
 #include <iostream>
-#include "Common.h"
-#include "BinarySearchTree.h"
 #include <vector>
 #include <algorithm>
-#include <random> // std::default_random_engine
+#include <random> 
+#include "Common.h"
+#include "BinaryTree.hpp"
+#include "BinarySearchTree.h"
 
-int main()
+
+void BSTFunction1()
 {
     std::vector<int> p;
     for (int i = 0; i < 10000000; i++) {
@@ -23,9 +25,37 @@ int main()
         bst.Insert(i);
     }
     counter.end();
-    //bst.inorder_yield(bst.getRoot(), [](auto i) { std::cout << i << "  "; });
+
+    auto q = bst.Search(100);
+    if (q != nullptr) {
+        std::cout << q->key;
+    }
+    else {
+        std::cout << "cannot find" << std::endl;
+    }
+
+
+    bst.inorder_yield(bst.getRoot(), [](auto i) { std::cout << i << "  "; });
     std::cout << std::endl;
-    std::cout << "the max height of BST is" << bst.getMaxHeight() << std::endl;
+}
+std::shared_ptr<binary_tree_node<int>> ConstructBST(void)
+{
+    auto tree = std::make_shared<binary_tree_node<int>>(5);
+    auto p = Insert(tree, 2, DIRECTION::LEFT);
+    auto q = Insert(tree, 10, DIRECTION::RIGHT);
+    Insert(p, 1, DIRECTION::LEFT);
+    Insert(Insert(p, 3, DIRECTION::RIGHT), 4, DIRECTION::RIGHT);
+    q = Insert(q, 8, DIRECTION::LEFT);
+    Insert(Insert(q, 7, DIRECTION::LEFT), 6, DIRECTION::LEFT);
+    Insert(q, 9, DIRECTION::RIGHT);
+    return tree;
+}
+int main()
+{
+
+    BinarySearchTree bst(ConstructBST());
+    bst.inorder_yield(bst.getRoot(), [](auto i) { std::cout << i << "  "; });
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
