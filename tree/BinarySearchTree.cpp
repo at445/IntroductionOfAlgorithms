@@ -42,38 +42,34 @@ std::shared_ptr<binary_tree_node<int>> BinarySearchTree::Search(int k)
 	return nullptr;
 }
 
-
 bool BinarySearchTree::Delete(std::shared_ptr<binary_tree_node<int>> p)
 {
+	if (p == nullptr) return false;
 	if ((p->leftChild == nullptr) && (p->rightChild == nullptr)) {
 		auto q = p->parent;
 		if (q->leftChild == p) q->leftChild = nullptr;
 		else q->rightChild = nullptr;
 	}
 	else if (p->leftChild == nullptr) {
-		if (p->parent->leftChild == p) p->parent->leftChild = p->rightChild;
-		else p->parent->rightChild = p->rightChild;
-		p->rightChild->parent = p->parent;
+		auto q = p->parent;
+		if (q->leftChild == p) q->leftChild = p->rightChild;
+		else q->rightChild = p->rightChild;
+		p->rightChild->parent = q;
 	}
 	else if (p->rightChild == nullptr) {
-		if (p->parent->leftChild == p) p->parent->leftChild = p->leftChild;
-		else p->parent->rightChild = p->leftChild;
-		p->leftChild->parent = p->parent;
+		auto q = p->parent;
+		if (q->leftChild == p) q->leftChild = p->leftChild;
+		else q->rightChild = p->leftChild;
+		p->leftChild->parent = q;
 	}
 	else {
 		auto q = GetSuccessor(p);
-		q->leftChild = p->leftChild;
-		if (p->parent->leftChild == p) {
-			p->parent->leftChild = q;
-		}
-		else {
-			p->parent->rightChild = q;
-
-		}
-		q->parent = p->parent;
+		if (q->parent->leftChild == q) q->parent->leftChild = q->rightChild;
+		else q->parent->rightChild = q->rightChild;
+		p->key = q->key;
 	}
 
-	return false;
+	return true;
 }
 
 std::shared_ptr<binary_tree_node<int>> BinarySearchTree::GetMaxmumItem(std::shared_ptr<binary_tree_node<int>> p)
@@ -97,7 +93,7 @@ std::shared_ptr<binary_tree_node<int>> BinarySearchTree::GetSuccessor(std::share
 {
 	if (p->rightChild != nullptr) { return GetMinmumItem(p->rightChild); }
 	auto y = p->parent;
-	while (y->rightChild == p)
+	while ((y!= nullptr) && (y->rightChild == p))
 	{
 		p = y;
 		y = y->parent;

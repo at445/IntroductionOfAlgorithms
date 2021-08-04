@@ -1,8 +1,7 @@
-﻿  BinarySearchTree.cpp
-  main.cpp
-  正在生成代码
-  0 of 96 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+﻿  main.cpp
+  Generating code
+  1 of 50 functions ( 2.0%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    16 functions had inline decision re-evaluated but remain unchanged
-  已完成代码的生成
-  tree.vcxproj -> C:\Users\jings\Desktop\IntroductionOfAlgorithms\x64\Release\Tree.exe
+    1 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  tree.vcxproj -> C:\Users\Z003TJYH\Desktop\code\IntroductionOfAlgorithms\x64\Release\Tree.exe

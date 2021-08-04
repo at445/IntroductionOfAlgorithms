@@ -13,10 +13,10 @@
 void BSTFunction1()
 {
     std::vector<int> p;
-    for (int i = 0; i < 10000000; i++) {
+    for (int i = 0; i < 10000; i++) {
         p.push_back(i);
     }
-    std::shuffle(p.begin(), p.end(), std::default_random_engine(2));
+    std::shuffle(p.begin(), p.end(), std::default_random_engine(4));
     PerformanceCounter counter;
 
     counter.start();
@@ -26,16 +26,20 @@ void BSTFunction1()
     }
     counter.end();
 
-    auto q = bst.Search(100);
-    if (q != nullptr) {
-        std::cout << q->key;
-    }
-    else {
-        std::cout << "cannot find" << std::endl;
-    }
-
-
-    bst.inorder_yield(bst.getRoot(), [](auto i) { std::cout << i << "  "; });
+    bst.Delete(bst.Search(10));
+    bst.Delete(bst.Search(100));
+    bst.Delete(bst.Search(6580));
+    bst.Delete(bst.Search(874));
+    bst.Delete(bst.Search(5870));
+    bst.Delete(bst.Search(574));
+    bst.Delete(bst.Search(1000));
+    bst.Delete(bst.Search(1234));
+    bst.Delete(bst.Search(8754));
+    bst.Delete(bst.Search(69954));
+   
+    int count = 0;
+    bst.inorder_yield(bst.getRoot(), [&count](auto i) { count++; std::cout << i << "  "; });
+    std::cout << "total size of bst is:" << count << std::endl;
     std::cout << std::endl;
 }
 std::shared_ptr<binary_tree_node<int>> ConstructBST(void)
@@ -53,9 +57,10 @@ std::shared_ptr<binary_tree_node<int>> ConstructBST(void)
 int main()
 {
 
-    BinarySearchTree bst(ConstructBST());
-    bst.inorder_yield(bst.getRoot(), [](auto i) { std::cout << i << "  "; });
+    //BinarySearchTree bst(ConstructBST());
+    //bst.inorder_yield(bst.getRoot(), [](auto i) { std::cout << i << "  "; });
 
+    BSTFunction1();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
