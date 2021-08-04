@@ -5,6 +5,7 @@
 #include <vector>
 #include <algorithm>
 #include <random> 
+#include <set>
 #include "Common.h"
 #include "BinaryTree.hpp"
 #include "BinarySearchTree.h"
@@ -13,7 +14,7 @@
 void BSTFunction1()
 {
     std::vector<int> p;
-    for (int i = 0; i < 10000; i++) {
+    for (int i = 0; i < 100000; i++) {
         p.push_back(i);
     }
     std::shuffle(p.begin(), p.end(), std::default_random_engine(4));
@@ -26,19 +27,28 @@ void BSTFunction1()
     }
     counter.end();
 
-    bst.Delete(bst.Search(10));
-    bst.Delete(bst.Search(100));
-    bst.Delete(bst.Search(6580));
-    bst.Delete(bst.Search(874));
-    bst.Delete(bst.Search(5870));
-    bst.Delete(bst.Search(574));
-    bst.Delete(bst.Search(1000));
-    bst.Delete(bst.Search(1234));
-    bst.Delete(bst.Search(8754));
-    bst.Delete(bst.Search(69954));
-   
+    p.clear();
+
+    std::default_random_engine e;
+    std::uniform_real_distribution<float> u(1, 100000);
+    std::set<int> q;
+    for (int i = 0; i < 50000; i++) {
+        q.insert(static_cast<int>(u(e)));
+    }
+    counter.start();
+    for (auto i : q) {
+        bst.Delete(bst.Search(i));
+    }
+    counter.end();
+    std::cout << "total : " << q.size() << " will be deleted" << std::endl;
+    for (auto i : q) {
+        if (nullptr != bst.Search(i)) {
+            std::cout << "error here" << std::endl;
+            return;
+        }
+    }
     int count = 0;
-    bst.inorder_yield(bst.getRoot(), [&count](auto i) { count++; std::cout << i << "  "; });
+    bst.inorder_yield(bst.getRoot(), [&count](auto i) { count++; });
     std::cout << "total size of bst is:" << count << std::endl;
     std::cout << std::endl;
 }

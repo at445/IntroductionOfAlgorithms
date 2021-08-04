@@ -23,7 +23,9 @@ public:
 	std::shared_ptr<binary_tree_node<int>> GetMaxmumItem(std::shared_ptr<binary_tree_node<int>> p);
 	std::shared_ptr<binary_tree_node<int>> GetMinmumItem(std::shared_ptr<binary_tree_node<int>> p);
 	std::shared_ptr<binary_tree_node<int>> GetSuccessor(std::shared_ptr<binary_tree_node<int>> p);
+	std::shared_ptr<binary_tree_node<int>> GetPredecessor(std::shared_ptr<binary_tree_node<int>> p);
 private:
+	void translate(std::shared_ptr<binary_tree_node<int>> op, std::shared_ptr<binary_tree_node<int>> np);
 	std::shared_ptr<binary_tree_node<int>> root;
 };
 
